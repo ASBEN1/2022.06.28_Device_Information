@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디바이스 정보</title>
+</head>
+
+<body>
+  <h2>디바이스 정보 - getDevice</h2>
+  <script>
+
+    /*let info = navigator.userAgent;*/
+
+    // 값을 읽어서 소문자로 변환 .toLocaleLowerCase();
+    let info = navigator.userAgent.toLocaleLowerCase();
+    document.write(`${info}<br>`);
+
+    // info 정보에서 특정 키워드로 디바이스(os) 확인
+    // 문자.indexOf('찾을 문자'); => 배열값 또는 배열값이 없으면 -1(없음)
+    // 키워드: Wnidows | ios(Machintosh) | iphone | andriod
+    info.indexOf('windows');
+    let result = info.indexOf('windows');
+    document.write(result); // 13은 문자값이 존재함 navigator.userAgent의 13번째 문자 배열에 존재함
+
+    // [!= -1]는 부정문 (~가 아니라면)
+    if (info.indexOf('windows') != -1) {
+      document.write(`<br>OS = 윈도우`);
+    }
+
+    else if (info.indexOf('machintosh') != -1) {
+      document.write(`<br>OS = 매킨토시`);
+    }
+
+    else if (info.indexOf('iphone') != -1) {
+      document.write(`<br>스마트폰 = 아이폰`);
+    }
+
+    else if (info.indexOf('andriod') != -1) {
+      document.write(`<br>스마트폰 = 안드로이드`);
+    }
+    else {
+      document.write(`<br>UNIDENTIFIED SYSTEM`);
+    };
+
+    // 모니터 해상도 정보
+    let wd = screen.width;
+    let ht = screen.height;
+    document.write(`<br><br>해상도 = ${wd} x ${ht}`);
+
+    // GitHub에 업로드해서 모바일로 확인
+  </script>
+</body>
+
+</html>
